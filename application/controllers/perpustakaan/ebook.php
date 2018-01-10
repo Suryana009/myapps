@@ -33,7 +33,7 @@ class ebook extends CI_Controller{
 			$row[] = $ebook->deskripsi;
 			$row[] = $ebook->kategori;
 			if($ebook->gambar != ''){
-				$gambar = '<a href="'.base_url('ebook/'.$ebook->gambar).'" target="_blank"><img style="width: 100px; height:125px"  src="'.base_url('ebook/'.$ebook->gambar).'" class="img-responsive" /></a>';
+				$gambar = '<a href="'.base_url('ebook/'.$ebook->gambar).'" data-fancybox="images"><img style="width: 100px; height:125px"  src="'.base_url('ebook/'.$ebook->gambar).'" class="img-responsive" /></a>';
 			}
 			else
 			{

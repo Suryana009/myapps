@@ -32,7 +32,7 @@ class berita extends CI_Controller {
 			$row[] = $berita->deskripsi;
 			$row[] = $berita->tgl_posting;
 			if($berita->file != ''){
-				$file = '<a href="'.base_url('berita/'.$berita->file).'" target="_blank"><img style="width: 100px; height:125px"  src="'.base_url('berita/'.$berita->file).'" class="img-responsive" /></a>';
+				$file = '<a href="'.base_url('berita/'.$berita->file).'" data-fancybox="images"><img style="width: 100px; height:125px"  src="'.base_url('berita/'.$berita->file).'" class="img-responsive" /></a>';
 			}
 			else
 			{

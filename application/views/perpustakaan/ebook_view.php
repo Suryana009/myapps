@@ -42,9 +42,15 @@
 <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.min.js')?>"></script>
 <script src="<?php echo base_url('assets/datepicker/js/bootstrap-datepicker.js')?>"></script>
 <script src="<?php echo base_url('assets/datepicker/js/bootstrap-datepicker.min.js')?>"></script>
+<script src="<?php echo base_url('assets/fancybox/dist/jquery.fancybox.js');?>"></script>
 
 
 <script type="text/javascript">
+$().fancybox({
+  selector : '[data-fancybox="images"]',
+  thumbs   : false,
+  hash     : false,
+});
 
 var save_method; //for save method string
 var table;

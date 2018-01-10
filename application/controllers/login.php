@@ -19,8 +19,8 @@ class login extends CI_Controller{
 			'password' => md5($password)
 			);
 		$cek = $this->login_model->cek_login("admin",$where)->num_rows();
-		if($cek > 0){
- 
+		if($cek > 0)
+		{			
 			$data_session = array(
 				'nama_lengkap' => $username,
 				'status' => "login"
@@ -32,6 +32,7 @@ class login extends CI_Controller{
  
 		}else{
 			echo "Username dan password salah !";
+			/*echo "<script>alert('Username dan password salah !')</script>";*/
 		}
 	}
  

@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/fullcalendar/fullcalendar.css');?>"/>
     <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/_all-skins.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/select2/select2.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/fancybox/dist/jquery.fancybox.css');?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/booststrap-validator/bootstrapValidator.min.css');?>"/>        
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-colorpicker/bootstrap-colorpicker.min.css');?>"/>
 
   	</head>
   	
@@ -23,9 +27,9 @@
   		<header class="main-header">
     		<a href="<?php echo base_url('dashboard'); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">ADM</span>
+      <span class="logo-mini">MAP</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Administrator</b></span>
+      <span class="logo-lg"><b>My Apps</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -62,7 +66,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url('login/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('login/logout'); ?>" onClick="return confirm('Anda yakin ingin keluar dari sistem ?')" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -98,6 +102,9 @@
 <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/select2/select2.full.min.js'); ?>"></script>
+<script src="<?php echo base_url('assets/booststrap-validator/bootstrapValidator.min.js');?>"></script>
+<script src="<?php echo base_url('assets/fullcalendar/fullcalendar.min.js');?>"></script>
+<script src="<?php echo base_url('assets/bootstrap-colorpicker/bootstrap-colorpicker.min.js');?>"></script>
 
 <script type="text/javascript">
   $(document).ready(function () {

@@ -4,7 +4,7 @@
                 <img src="<?php echo base_url('assets/dist/img/avatar5.png'); ?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Suryana</p>
+                <p><?php echo $this->session->userdata("nama_lengkap"); ?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
@@ -23,7 +23,7 @@
           <a href="#">
             <i class="fa fa-table"></i> <span>Dashboard</span>
               <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
+                <span class="label label-primary pull-right"></span>
               </span>
           </a>
           <ul class="treeview-menu">
@@ -35,7 +35,7 @@
             <i class="fa fa-files-o"></i>
             <span>Akademik</span>
               <span class="pull-right-container">
-                <span class="label label-primary pull-right"></span>
+                <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
             <ul class="treeview-menu">
@@ -48,10 +48,10 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-book"></i>
             <span>Perpustakaan</span>
               <span class="pull-right-container">
-                <span class="label label-primary pull-right"></span>
+                <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
             <ul class="treeview-menu">
@@ -65,12 +65,23 @@
             <i class="fa fa-files-o"></i>
             <span>Absensi</span>
               <span class="pull-right-container">
-                <span class="label label-primary pull-right"></span>
+                <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
             <ul class="treeview-menu">
               <li><a href="<?php echo site_url('absensi/siswa');?>"><i class="fa fa-circle-o"></i> Data Absensi Siswa</a></li>
 			  <li><a href="<?php echo site_url('absensi/guru');?>"><i class="fa fa-circle-o"></i> Data Absensi Guru</a></li>
+            </ul>
+        </li>
+		<li class="treeview">
+          <a href="#">
+            <i class="fa fa-calendar"></i> <span>Kalender</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="<?php echo site_url('calendar');?>"><i class="fa fa-circle-o"></i> Kalender Event</a></li>
             </ul>
         </li>
       </ul>

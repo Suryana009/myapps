@@ -15,7 +15,7 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
   		<div class="login-logo">
-    		<a href="<?php echo base_url(); ?>"><b>Admin</b>LTE</a>
+    		<a href="<?php echo base_url(); ?>"><b>My</b>APPS</a>
   		</div>
 		
 		<div class="login-box-body">
