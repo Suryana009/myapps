@@ -9,15 +9,6 @@
             </div>
           </div>
       
-      <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                      <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-                    </span>
-            </div>
-          </form>
-      
       <ul class="sidebar-menu" data-widget="tree">
         <li class="treeview">
           <a href="#">
@@ -93,8 +84,8 @@
           </a>
           <ul class="treeview-menu">
               <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan PSB</a></li>
-			  <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan Absensi Siswa</a></li>
-			  <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan Absensi Guru</a></li>
+			  <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan Absensi</a></li>
+        <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan Peminjaman Buku</a></li>
             </ul>
         </li>
       </ul>

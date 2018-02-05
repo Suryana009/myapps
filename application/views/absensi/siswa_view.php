@@ -93,7 +93,25 @@ $(document).ready(function() {
 
 });
 
+$(function(){
+    $.ajaxSetup({
+    type:"POST",
+    url: "<?php echo base_url('index.php/absensi/siswa/get_siswa_data') ?>",
+    cache: false,
+    });
 
+    $(".id_kelas").change(function(){
+        var value=$(this).val();
+        if(value>0){
+            $.ajax({
+                data:{modul:'siswa',id:value},
+                success: function(respond){
+                $(".id_siswa").html(respond);
+                }
+            })
+        }
+    });
+})
 
 function tambah_siswa()
 {
@@ -251,7 +269,7 @@ function hapus_siswa(id)
                     <div class="form-group">
                         <label class="control-label col-md-3">Kelas</label>
                         <div class="col-md-9">
-                          <select name="id_kelas" class="form-control">
+                          <select name="id_kelas" class="form-control id_kelas">
                             <option value="">Pilih</option>
                             <?php foreach($kelas as $row){?>
                             <option value="<?php echo $row->id_kelas ?>"><?php echo $row->kelas ?></option>
@@ -262,7 +280,7 @@ function hapus_siswa(id)
                     <div class="form-group">
                         <label class="control-label col-md-3">Nama Siswa</label>
                         <div class="col-md-9">
-                          <select name="id_siswa" class="form-control">
+                          <select name="id_siswa" class="form-control id_siswa">
                             <option value="">Pilih</option>
                             <?php foreach($siswa as $row){?>
                             <option value="<?php echo $row->id_siswa ?>"><?php echo $row->nama_lengkap ?></option>

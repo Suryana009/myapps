@@ -87,6 +87,17 @@ class siswa_model extends CI_Model {
 		return $query->row();
 	}
 
+	function get_siswa_data($id_kelas)
+	{
+	$siswa="<option value=''>Pilih</pilih>";
+	$this->db->order_by('nama_lengkap','ASC');
+	$kab= $this->db->get_where('siswa',array('id_kelas'=>$id_kelas));
+		foreach ($kab->result_array() as $data ){
+		$siswa.= "<option value='$data[id_siswa]'>$data[nama_lengkap]</option>";
+		}
+	return $siswa;
+	}
+
 	public function tambah_siswa($data)
 	{
 		$this->db->insert($this->table, $data);

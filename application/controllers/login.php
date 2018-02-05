@@ -38,6 +38,9 @@ class login extends CI_Controller{
  
 	function logout(){
 		$this->session->sess_destroy();
+		$this->session->unset_userdata(array('username' => ''));
 		redirect(base_url('login'));
+		// $this->auth->do_logout();
+		// echo "<meta http-equiv='refresh' content='0; url=".base_url()."'>";
 	}
 }

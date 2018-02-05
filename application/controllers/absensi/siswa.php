@@ -71,6 +71,16 @@ class siswa extends CI_Controller{
 		echo json_encode(array("status" => TRUE));
 	}
 
+	public function get_siswa_data()
+	{
+		$modul=$this->input->post('modul');
+		$id=$this->input->post('id');
+
+		if($modul=="siswa"){
+			$this->siswa->get_siswa_data($id);
+		}
+	}
+
 	public function update_siswa()
 	{
 		$this->_validate();
