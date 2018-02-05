@@ -235,7 +235,7 @@ function hapus_mapel(id)
 			</div>
           	<div class="modal-footer">
             	<button type="button" id="btnSave" onClick="save()" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-inverse" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           	</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->

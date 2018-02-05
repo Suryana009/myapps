@@ -23,37 +23,39 @@
 		<script src="<?php echo base_url('assets/bootstrap-colorpicker/bootstrap-colorpicker.min.js');?>"></script>
 		<script src="<?php echo base_url('assets/jQueryUI/main.js');?>"></script>
 		
-        <div class="modal fade">
+        <div class="modal fade" id="modal_form" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title"></h4>
+                        <h3 class="modal-title"></h3>
                     </div>
                     <div class="modal-body">
                         <div class="error"></div>
                         <form class="form-horizontal" id="crud-form">
                         <input type="hidden" id="start">
                         <input type="hidden" id="end">
+						<div class="form-body">
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="title">Title</label>
-                                <div class="col-md-4">
-                                    <input id="title" name="title" type="text" class="form-control input-md" />
+                                <label class="col-md-3 control-label" for="title">Title</label>
+                                <div class="col-md-9">
+                                    <input id="title" name="title" type="text" class="form-control" />
                                 </div>
                             </div>                            
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="description">Description</label>
-                                <div class="col-md-4">
+                                <label class="col-md-3 control-label" for="description">Description</label>
+                                <div class="col-md-9">
                                     <textarea class="form-control" id="description" name="description"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="color">Color</label>
-                                <div class="col-md-4">
-                                    <input id="color" name="color" type="text" class="form-control input-md" readonly="readonly" />
+                                <label class="col-md-3 control-label" for="color">Color</label>
+                                <div class="col-md-9">
+                                    <input id="color" name="color" type="text" class="form-control" readonly="readonly" />
                                     <span class="help-block">Click to pick a color</span>
                                 </div>
                             </div>
+							</div>
                         </form>
                     </div>
                     <div class="modal-footer">

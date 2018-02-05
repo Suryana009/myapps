@@ -21,7 +21,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-table"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               <span class="pull-right-container">
                 <span class="label label-primary pull-right"></span>
               </span>
@@ -32,7 +32,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-building"></i>
             <span>Akademik</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -62,7 +62,7 @@
         </li>
 		<li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-pencil"></i>
             <span>Absensi</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -82,6 +82,19 @@
           </a>
           <ul class="treeview-menu">
               <li><a href="<?php echo site_url('calendar');?>"><i class="fa fa-circle-o"></i> Kalender Event</a></li>
+            </ul>
+        </li>
+		<li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i> <span>Laporan</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan PSB</a></li>
+			  <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan Absensi Siswa</a></li>
+			  <li><a href="#" onclick="return confirm('Masih dalam tahap pengembangan')"><i class="fa fa-circle-o"></i> Laporan Absensi Guru</a></li>
             </ul>
         </li>
       </ul>

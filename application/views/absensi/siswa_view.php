@@ -41,6 +41,7 @@
 <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.min.js')?>"></script>
 <script src="<?php echo base_url('assets/datepicker/js/bootstrap-datepicker.js')?>"></script>
 <script src="<?php echo base_url('assets/datepicker/js/bootstrap-datepicker.min.js')?>"></script>
+<script src="<?php echo base_url('assets/bootbox/bootbox.min.js');?>"></script>
 
 
 <script type="text/javascript">
@@ -140,55 +141,73 @@ function reload_table()
 
 function save()
 {
-    $('#btnSave').text('Saving...'); //change button text
-    $('#btnSave').attr('disabled',true); //set button disable 
+	// $('#btnSave').text('Saving...');
+ //    $('#btnSave').attr('disabled',true);
     var url;
+	bootbox.dialog({
+		message: "Simpan / Update Data ?",
+		title: "Konfirmasi",
+		buttons: {
+			success: {
+				label: "Ya",
+				className: "btn-success",
+				callback: function() {
+                    if(save_method == 'add') {
+                        url = "<?php echo site_url('index.php/absensi/siswa/tambah_siswa')?>";
+                    } else {
+                        url = "<?php echo site_url('index.php/absensi/siswa/update_siswa')?>";
+                    }
 
-    if(save_method == 'add') {
-        url = "<?php echo site_url('index.php/absensi/siswa/tambah_siswa')?>";
-    } else {
-        url = "<?php echo site_url('index.php/absensi/siswa/update_siswa')?>";
-    }
+                    var formData = new FormData($('#form')[0]);
+                    $.ajax({
+                        url : url,
+                        type: "POST",
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        dataType: "JSON",
+                        success: function(data)
+                        {
 
-    // ajax adding data to database
-
-    var formData = new FormData($('#form')[0]);
-    $.ajax({
-        url : url,
-        type: "POST",
-        data: formData,
-        contentType: false,
-        processData: false,
-        dataType: "JSON",
-        success: function(data)
-        {
-
-            if(data.status) //if success close modal and reload ajax table
-            {
-                $('#modal_form').modal('hide');
-                reload_table();
-            }
-            else
-            {
-                for (var i = 0; i < data.inputerror.length; i++) 
-                {
-                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
-                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
-                }
-            }
-            $('#btnSave').text('Save'); //change button text
-            $('#btnSave').attr('disabled',false); //set button enable 
+                            if(data.status) //if success close modal and reload ajax table
+                            {
+                                $('#modal_form').modal('hide');
+                                reload_table();
+                            }
+                            else
+                            {
+                                for (var i = 0; i < data.inputerror.length; i++) 
+                                {
+                                    $('[name="'+data.inputerror[i]+'"]').parent().parent().addClass('has-error'); //select parent twice to select div form-group class and add has-error class
+                                    $('[name="'+data.inputerror[i]+'"]').next().text(data.error_string[i]); //select span help-block class set text error string
+                                }
+                            }
+                            $('#btnSave').text('Save'); //change button text
+                            $('#btnSave').attr('disabled',false); //set button enable 
 
 
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            alert('Error adding / update data');
-            $('#btnSave').text('Save'); //change button text
-            $('#btnSave').attr('disabled',false); //set button enable 
+                        },
+                        error: function (jqXHR, textStatus, errorThrown)
+                        {
+                            alert('Error adding / update data');
+                            $('#btnSave').text('Save'); //change button text
+                            $('#btnSave').attr('disabled',false); //set button enable 
 
-        }
-    });
+                        }
+                    });
+				}
+			},
+			danger: {
+				label: "Tidak",
+				className: "btn-danger",
+				callback: function() {
+							   
+				}
+			}
+		}
+	});
+
+    
 }
 
 function hapus_siswa(id)
@@ -270,12 +289,12 @@ function hapus_siswa(id)
                           <span class="help-block"></span>
                         </div>
                     </div>
-          				</div>
+          			</div>
 				</form>
 			</div>
           	<div class="modal-footer">
             	<button type="button" id="btnSave" onClick="save()" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-inverse" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           	</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->

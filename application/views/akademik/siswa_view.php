@@ -52,7 +52,7 @@ $(document).ready(function() {
     "processing": true, //Feature control the processing indicator.
         "serverSide": true, //Feature control DataTables' server-side processing mode.
         "order": [], //Initial no order.
-    "ajax": {
+    	"ajax": {
             "url": "<?php echo site_url('akademik/siswa/show_siswa_DT')?>",
             "type": "POST"
         },
@@ -75,7 +75,7 @@ $(document).ready(function() {
         format: "yyyy-mm-dd", 
     });
 	
-	$('.hobby').select2();
+	$('#hobby').select2();
 
     //set input/textarea/select event when change value, remove class error and remove text help block 
     $("input").change(function(){
@@ -312,7 +312,8 @@ function hapus_siswa(id)
 			<div class="form-group">
               <label class="control-label col-md-3">Hobby</label>
               <div class="col-md-9">
-                <select name="hobby[]" id="hobby" class="form-control hobby">
+                <!-- <select multiple="multiple" name="hobby[]" id="hobby" class="form-control"> -->
+				<select name="hobby" class="form-control">
                   <option value="">Pilih</option>
                   <option value="Islam">Islam</option>
                   <option value="Kristen">Kristen</option>
@@ -384,7 +385,7 @@ function hapus_siswa(id)
           </div>
           <div class="modal-footer">
             <button type="button" id="btnSave" onClick="save()" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-inverse" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->

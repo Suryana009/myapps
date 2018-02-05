@@ -71,10 +71,6 @@
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -105,6 +101,7 @@
 <script src="<?php echo base_url('assets/booststrap-validator/bootstrapValidator.min.js');?>"></script>
 <script src="<?php echo base_url('assets/fullcalendar/fullcalendar.min.js');?>"></script>
 <script src="<?php echo base_url('assets/bootstrap-colorpicker/bootstrap-colorpicker.min.js');?>"></script>
+<script src="<?php echo base_url('assets/bootbox/bootbox.min.js');?>"></script>
 
 <script type="text/javascript">
   $(document).ready(function () {
